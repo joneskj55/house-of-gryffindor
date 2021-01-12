@@ -1,6 +1,7 @@
-# house-of-hufflepuff
+# house-of-gryffindor
 Web 330 Group Project
 
 # contributors
-- Jonathan Disla
+- Adam Luna
+- Mark Watson
 - Kevin Jones
