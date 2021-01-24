@@ -1,7 +1,7 @@
 # house-of-gryffindor
 Web 330 Group Project
 
-![gryffindor](gryffindor.jpg)
+![gryffindor](img/gryffindor.jpg)
 
 # contributors
 - Adam Luna
