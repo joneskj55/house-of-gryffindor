@@ -6,11 +6,18 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>JavaScript Trivia</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Imported Font Styles -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div id="knockout-app" style="text-align: center; padding-top: 5em">
-  <h1 class="header">JavaScript Trivia</h1>
+<div id="knockout-app">
+  <h1 class="header">
+    House Gryffindor's<br>
+    JavaScript Trivia
+  </h1>
+  <img id="crest" src="img/gryffindor.jpg" alt="House Gryffindor crest">
   <h2 class="sub-header">Test Your JS Knowledge</h2>
   <!-- Click the button below to begin the quiz -->
   <button id="start" data-bind="click: start">START</button>
@@ -133,8 +140,8 @@
       </div>
     </div>
     <p>
-      <button data-bind="click: clear">CLEAR</button>
-      <button data-bind="click: submit">SUBMIT</button>
+      <button class="quiz-btn" data-bind="click: clear">CLEAR</button>
+      <button class="quiz-btn" data-bind="click: submit">SUBMIT</button>
     </p>
   </div>
 

@@ -1,3 +1,78 @@
+* {
+  font-family: 'Nunito', sans-serif;
+  color: #090909;
+  font-size: 16px;
+}
+
+body {
+  background-color: #ECAD43;
+  padding: 1em;
+}
+
+.header, .sub-header {
+  font-family: 'Jim Nightshade', cursive;
+  color: #F5F6CE;
+  font-size: 4em;
+}
+
+.sub-header {
+  font-size: 2em;
+}
+
+#knockout-app {
+  background-color: #721E1C;
+  text-align: center;
+  padding: 2em 0;
+  border-radius: 10px;
+}
+
+#crest {
+  display: block;
+  width: 350px;
+  margin: auto;
+  padding-bottom: 1em;
+}
+
+#start {
+  background-color: #ECAD43;
+  border: none;
+  color: #090909;
+  font-weight: 700;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#start:hover {
+  background-color: #D3942A;
+}
+
+#quiz {
+  background-color: #A8322E;
+  padding: 2em 0;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.quiz-btn {
+  background-color: #F5F6CE;
+  border: none;
+  color: #090909;
+  font-weight: 700;
+  padding: 10px 20px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.quiz-btn:hover {
+  background-color: #DCDDB5;
+}
+
 .hidden {
   display: none;
 }
