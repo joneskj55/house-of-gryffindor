@@ -68,6 +68,7 @@ function QuizViewModel() {
     self.userSelection5 = ko.observable(),)
 
 
+
   // Start quiz
   self.start = function() {
     self.clear() // Clear quiz on page load
@@ -108,6 +109,22 @@ function QuizViewModel() {
     // Tally up amount of correct answers and display
     return userSelections();
   }, self)
+
+  self.retest = function() {
+    $("#answers").hide();
+    self.clear();
+    $("#quiz").show();
+  }
+
+  self.back = function() {
+    $("#answers").hide();
+    $("#summary").show()
+  }
+
+  self.answers = function() {
+    $("#summary").hide();
+    $("#answers").show();
+  }
 }
 
 ko.applyBindings(new QuizViewModel());

@@ -173,7 +173,15 @@
     <h3>Score:</h3>
     <p>
       <button data-bind="click: start">RETEST</button>
-      <button>ANSWERS</button>
+      <button data-bind="click: answers">ANSWERS</button>
+    </p>
+  </div>
+<!--  ANSWERS SUMMARY-->
+  <div id="answers" class="hidden">
+    <h3>Your Answers</h3>
+    <p>
+      <button data-bind="click: back">BACK</button>
+      <button data-bind="click: retest">RETEST</button>
     </p>
   </div>
 </div>
