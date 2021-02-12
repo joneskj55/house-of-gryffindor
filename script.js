@@ -73,10 +73,8 @@ function QuizViewModel() {
     self.userSelection10 = ko.observable()
   )
 
-
-
   // Start quiz
-  self.start = function() {
+  self.start = function () {
     self.clear() // Clear quiz on page load
     $("#start").hide(); // Hide start button
     $(".header").hide(); // Hide header
@@ -87,50 +85,51 @@ function QuizViewModel() {
   };
 
   // Clear quiz on button click
-  self.clear = function() {
+  self.clear = function () {
     $('input[type="radio"]').prop('checked', false);
   }
 
-  self.getAnswer = function() {
-    let chosenAnswer = $('input[type="radio"]').checked;
-
-  }
-
   // Submit quiz
-  self.submit = function() {
+  self.submit = function () {
     $("#quiz").hide(); // Hide quiz
-    $(".header").show() // Show header
+    $("#crest").show() // Show crest
     $('#summary').show(); // Show results
 
-    // Get value of checked (correct, incorrect, or null) Use `data-bind` to get value
-    // If checked correct < 6 return Beginner, else if checked correct > 5 && < 8 return Novice, else return Expert
-    // For all checked incorrect display in summary page
-    // Show results (rank, score: percentage, list of incorrect answers)
-    // Show results
+    // TODO: Get value of checked (correct, incorrect, or null) Use `data-bind` to get value
+    // TODO: If checked correct < 6 return Beginner, else if checked correct > 5 && < 8 return Novice, else return Expert
+    // TODO: For all checked incorrect display in summary page
+    // TODO: Show results (rank, score: percentage, list of incorrect answers)
+    // TODO: Show results
+
     console.log("submit button works")
-    console.log(userSelections());
-    console.log(self.results());
+    console.log(userSelections()); // Array of user selections
+    console.log(self.results()); // Array of user selections from results() function
   }
 
-  // Results (might not need this; the observableArray is doing the same thing
-  self.results = ko.computed(function() {
-    // Tally up amount of correct answers and display
+  // Results (might not need this; the observableArray is doing the same thing)
+  self.results = ko.computed(function () {
+    // TODO: Tally up amount of correct answers and display
     return userSelections();
   }, self)
 
-  self.retest = function() {
+  // Retest button
+  self.retest = function () {
     $("#answers").hide();
     $(".header").hide();
+    $("#crest").hide();
     self.clear();
     $("#quiz").show();
   }
 
-  self.back = function() {
+  // Back button
+  self.back = function () {
     $("#answers").hide();
-    $("#summary").show()
+    $("#crest").show();
+    $("#summary").show();
   }
 
-  self.answers = function() {
+  // Answers button
+  self.answers = function () {
     $("#summary").hide();
     $("#answers").show();
   }
