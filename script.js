@@ -65,7 +65,13 @@ function QuizViewModel() {
     self.userSelection2 = ko.observable(),
     self.userSelection3 = ko.observable(),
     self.userSelection4 = ko.observable(),
-    self.userSelection5 = ko.observable(),)
+    self.userSelection5 = ko.observable(),
+    self.userSelection6 = ko.observable(),
+    self.userSelection7 = ko.observable(),
+    self.userSelection8 = ko.observable(),
+    self.userSelection9 = ko.observable(),
+    self.userSelection10 = ko.observable()
+  )
 
 
 
