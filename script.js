@@ -79,6 +79,7 @@ function QuizViewModel() {
   self.start = function() {
     self.clear() // Clear quiz on page load
     $("#start").hide(); // Hide start button
+    $(".header").hide(); // Hide header
     $(".sub-header").hide() // Hide subheader
     $("#crest").hide() // Hide crest
     $("#summary").hide() // Hide summary
@@ -98,6 +99,7 @@ function QuizViewModel() {
   // Submit quiz
   self.submit = function() {
     $("#quiz").hide(); // Hide quiz
+    $(".header").show() // Show header
     $('#summary').show(); // Show results
 
     // Get value of checked (correct, incorrect, or null) Use `data-bind` to get value
@@ -118,6 +120,7 @@ function QuizViewModel() {
 
   self.retest = function() {
     $("#answers").hide();
+    $(".header").hide();
     self.clear();
     $("#quiz").show();
   }
