@@ -12,10 +12,12 @@ body {
 .header, .sub-header {
   font-family: 'Jim Nightshade', cursive;
   color: #F5F6CE;
+  letter-spacing: 5px;
   font-size: 4em;
 }
 
 .sub-header {
+  letter-spacing: 2px;
   font-size: 2em;
 }
 
@@ -24,6 +26,8 @@ body {
   text-align: center;
   padding: 2em 0;
   border-radius: 10px;
+  -webkit-box-shadow: 0 0 12px 2px #090909;
+  box-shadow: 0 0 12px 2px #090909;
 }
 
 #crest {
@@ -47,15 +51,19 @@ button {
   border: none;
   color: #090909;
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 12px 24px;
   margin: 5px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  -webkit-box-shadow: 0 0 3px 1px #A06100;
+  box-shadow: 0 0 3px 1px #A06100;
 }
 
 button:hover {
   background-color: #D3942A;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .hidden {
