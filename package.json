@@ -1,7 +1,0 @@
-{
-  "name": "house-of-gryffindor",
-  "version": "1.0.0",
-  "dependencies": {
-    "prettier": "^2.2.1"
-  }
-}
