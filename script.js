@@ -54,46 +54,46 @@
 //     correctAnswer: "fifth correct answer"
 //   }];
 
-
 function QuizViewModel() {
   const self = this;
 
   // Get value of checked (correct, incorrect, or null) Use `data-bind` to get value
   // Clean this up (DRY), this is just to get the quiz working
   var userSelections = ko.observableArray();
-  userSelections.push(self.userSelection1 = ko.observable(),
-    self.userSelection2 = ko.observable(),
-    self.userSelection3 = ko.observable(),
-    self.userSelection4 = ko.observable(),
-    self.userSelection5 = ko.observable(),
-    self.userSelection6 = ko.observable(),
-    self.userSelection7 = ko.observable(),
-    self.userSelection8 = ko.observable(),
-    self.userSelection9 = ko.observable(),
-    self.userSelection10 = ko.observable()
-  )
+  userSelections.push(
+    (self.userSelection1 = ko.observable()),
+    (self.userSelection2 = ko.observable()),
+    (self.userSelection3 = ko.observable()),
+    (self.userSelection4 = ko.observable()),
+    (self.userSelection5 = ko.observable()),
+    (self.userSelection6 = ko.observable()),
+    (self.userSelection7 = ko.observable()),
+    (self.userSelection8 = ko.observable()),
+    (self.userSelection9 = ko.observable()),
+    (self.userSelection10 = ko.observable())
+  );
 
   // Start quiz
   self.start = function () {
-    self.clear() // Clear quiz on page load
+    self.clear(); // Clear quiz on page load
     $("#start").hide(); // Hide start button
     $(".header").hide(); // Hide header
-    $(".sub-header").hide() // Hide subheader
-    $("#crest").hide() // Hide crest
-    $("#summary").hide() // Hide summary
+    $(".sub-header").hide(); // Hide subheader
+    $("#crest").hide(); // Hide crest
+    $("#summary").hide(); // Hide summary
     $("#quiz").show(); // Show quiz
   };
 
   // Clear quiz on button click
   self.clear = function () {
-    $('input[type="radio"]').prop('checked', false);
-  }
+    $('input[type="radio"]').prop("checked", false);
+  };
 
   // Submit quiz
   self.submit = function () {
     $("#quiz").hide(); // Hide quiz
-    $("#crest").show() // Show crest
-    $('#summary').show(); // Show results
+    $("#crest").show(); // Show crest
+    $("#summary").show(); // Show results
 
     // TODO: Get value of checked (correct, incorrect, or null) Use `data-bind` to get value
     // TODO: If checked correct < 6 return Beginner, else if checked correct > 5 && < 8 return Novice, else return Expert
@@ -101,16 +101,16 @@ function QuizViewModel() {
     // TODO: Show results (rank, score: percentage, list of incorrect answers)
     // TODO: Show results
 
-    console.log("submit button works")
+    console.log("submit button works");
     console.log(userSelections()); // Array of user selections
     console.log(self.results()); // Array of user selections from results() function
-  }
+  };
 
   // Results (might not need this; the observableArray is doing the same thing)
   self.results = ko.computed(function () {
     // TODO: Tally up amount of correct answers and display
     return userSelections();
-  }, self)
+  }, self);
 
   // Retest button
   self.retest = function () {
@@ -119,22 +119,20 @@ function QuizViewModel() {
     $("#crest").hide();
     self.clear();
     $("#quiz").show();
-  }
+  };
 
   // Back button
   self.back = function () {
     $("#answers").hide();
     $("#crest").show();
     $("#summary").show();
-  }
+  };
 
   // Answers button
   self.answers = function () {
     $("#summary").hide();
     $("#answers").show();
-  }
+  };
 }
 
 ko.applyBindings(new QuizViewModel());
-
-
