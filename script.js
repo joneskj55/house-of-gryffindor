@@ -75,12 +75,10 @@ function QuizViewModel() {
 
   // Start quiz
   self.start = function () {
-    self.clear(); // Clear quiz on page load
     $("#start").hide(); // Hide start button
     $(".header").hide(); // Hide header
     $(".sub-header").hide(); // Hide subheader
     $("#crest").hide(); // Hide crest
-    $("#summary").hide(); // Hide summary
     $("#quiz").show(); // Show quiz
   };
 
