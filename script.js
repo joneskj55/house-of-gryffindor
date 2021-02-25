@@ -114,11 +114,7 @@ function QuizViewModel() {
 
   // Retest button
   self.retest = function () {
-    $("#answers").hide();
-    $(".header").hide();
-    $("#crest").hide();
-    self.clear();
-    $("#quiz").show();
+    window.location.reload();
   };
 
   // Back button
