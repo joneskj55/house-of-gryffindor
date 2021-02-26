@@ -306,6 +306,7 @@ function QuizViewModel() {
       rank.innerHTML = "Rank: Expert";
       let htmlScore = document.getElementById("score");
       htmlScore.innerHTML = "Score: " + score.toString() * 10 + "%";
+      // Confetti rains on screen if user is expert level
     }
   };
 
@@ -324,7 +325,6 @@ function QuizViewModel() {
   // Answers button
   self.answers = function () {
     $("#summary").hide(); // Hide quiz summary
-    $("#crest").hide(); // Hide crest
     $("#answers").show(); // Show answers div
   };
 }
