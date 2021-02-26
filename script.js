@@ -41,6 +41,7 @@ function QuizViewModel() {
     // TODO: Display list of incorrect answers
   };
 
+  // Get score and rank
   self.calculate = function () {
     const userChoice1 = $("input[type=radio][name=q1]:checked").val();
     const userChoice2 = $("input[type=radio][name=q2]:checked").val();
@@ -79,17 +80,21 @@ function QuizViewModel() {
       }
     });
 
-    console.log("total: " + total);
     if (total <= 5) {
       let rank = document.getElementById("rank");
       rank.innerHTML = "Rank: Beginner";
+      let htmlScore = document.getElementById("score");
+      htmlScore.innerHTML = "Score: " + score.toString() * 10;
     } else if (total <= 8 && total > 5) {
       let rank = document.getElementById("rank");
       rank.innerHTML = "Rank: Novice";
+      let htmlScore = document.getElementById("score");
+      htmlScore.innerHTML = "Score: " + score.toString() * 10;
     } else {
       let rank = document.getElementById("rank");
       rank.innerHTML = "Rank: Expert";
-      console.log("score: " + score);
+      let htmlScore = document.getElementById("score");
+      htmlScore.innerHTML = "Score: " + score.toString() * 10;
     }
   };
 
