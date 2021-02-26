@@ -1,64 +1,7 @@
-// const questions = [{
-//   number: 1,
-//   question: 'What is it?',
-//   answers: [{
-//     a: "first correct answer",
-//     b: "second wrong answer",
-//     c: "third wrong answer",
-//     d: "third wrong answer",
-//   }],
-//   correctAnswer: "first correct answer"
-// },
-//   {
-//     number: 2,
-//     question: 'What is it?',
-//     answers: [{
-//       a: "first wrong answer",
-//       b: "second correct answer",
-//       c: "third wrong answer",
-//       d: "third wrong answer",
-//     }],
-//     correctAnswer: "second correct answer"
-//   },
-//   {
-//     number: 3,
-//     question: 'What is it?',
-//     answers: [{
-//       a: "first wrong answer",
-//       b: "second wrong answer",
-//       c: "third correct answer",
-//       d: "third wrong answer",
-//     }],
-//     correctAnswer: "third correct answer"
-//   },
-//   {
-//     number: 4,
-//     question: 'What is it?',
-//     answers: [{
-//       a: "first wrong answer",
-//       b: "second wrong answer",
-//       c: "third wrong answer",
-//       d: "fourth correct answer",
-//     }],
-//     correctAnswer: "fourth correct answer"
-//   },
-//   {
-//     number: 5,
-//     question: 'What is it?',
-//     answers: [{
-//       a: "fifth correct answer",
-//       b: "second wrong answer",
-//       c: "third wrong answer",
-//       d: "third wrong answer",
-//     }],
-//     correctAnswer: "fifth correct answer"
-//   }];
-
 function QuizViewModel() {
   const self = this;
 
-  // Get value of checked (correct, incorrect, or null) Use `data-bind` to get value
-  // Clean this up (DRY), this is just to get the quiz working
+  // Get value of checked radio buttons and store in array
   var userSelections = ko.observableArray();
   userSelections.push(
     (self.userSelection1 = ko.observable()),
@@ -91,17 +34,11 @@ function QuizViewModel() {
   self.submit = function () {
     $("#quiz").hide(); // Hide quiz
     $("#crest").show(); // Show crest
+    self.calculate(); // get quiz results
     $("#summary").show(); // Show results
-    self.calculate();
-    // TODO: Get value of checked (correct, incorrect, or null) Use `data-bind` to get value
-    // TODO: If checked correct < 6 return Beginner, else if checked correct > 5 && < 8 return Novice, else return Expert
-    // TODO: For all checked incorrect display in summary page
-    // TODO: Show results (rank, score: percentage, list of incorrect answers)
-    // TODO: Show results
 
-    // console.log("submit button works");
-    // console.log(userSelections()); // Array of user selections
-    // console.log(self.results()); // Array of user selections from results() function
+    // TODO: Show Score as percentage
+    // TODO: Display list of incorrect answers
   };
 
   self.calculate = function () {
@@ -135,38 +72,26 @@ function QuizViewModel() {
     let score = 0;
 
     userAnswers.forEach(function (answer) {
-      //console.log(answer);
-
       if (answer === "correct") {
         correctAnswers++;
         score++;
-        //console.log(correctAnswers);
-        //console.log(score);
         total = correctAnswers;
       }
     });
 
     console.log("total: " + total);
     if (total <= 5) {
-      //console.log("Beginner");
       let rank = document.getElementById("rank");
       rank.innerHTML = "Rank: Beginner";
     } else if (total <= 8 && total > 5) {
-      //console.log("Novice");
       let rank = document.getElementById("rank");
       rank.innerHTML = "Rank: Novice";
     } else {
-      //console.log("Expert");
       let rank = document.getElementById("rank");
       rank.innerHTML = "Rank: Expert";
       console.log("score: " + score);
     }
   };
-  // Results (might not need this; the observableArray is doing the same thing)
-  // self.results = ko.computed(function () {
-  //   // TODO: Tally up amount of correct answers and display
-  //   return userSelections();
-  // }, self);
 
   // Retest button
   self.retest = function () {
