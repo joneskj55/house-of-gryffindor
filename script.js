@@ -168,6 +168,48 @@ function QuizViewModel() {
   self.q3optionC = ko.observable(questions[2].answers[0].c);
   self.q3optionD = ko.observable(questions[2].answers[0].d);
 
+  // Question four answer observables
+  self.q4optionA = ko.observable(questions[3].answers[0].a);
+  self.q4optionB = ko.observable(questions[3].answers[0].b);
+  self.q4optionC = ko.observable(questions[3].answers[0].c);
+  self.q4optionD = ko.observable(questions[3].answers[0].d);
+
+  // Question five answer observables
+  self.q5optionA = ko.observable(questions[4].answers[0].a);
+  self.q5optionB = ko.observable(questions[4].answers[0].b);
+  self.q5optionC = ko.observable(questions[4].answers[0].c);
+  self.q5optionD = ko.observable(questions[4].answers[0].d);
+
+  // Question six answer observables
+  self.q6optionA = ko.observable(questions[5].answers[0].a);
+  self.q6optionB = ko.observable(questions[5].answers[0].b);
+  self.q6optionC = ko.observable(questions[5].answers[0].c);
+  self.q6optionD = ko.observable(questions[5].answers[0].d);
+
+  // Question seven answer observables
+  self.q7optionA = ko.observable(questions[6].answers[0].a);
+  self.q7optionB = ko.observable(questions[6].answers[0].b);
+  self.q7optionC = ko.observable(questions[6].answers[0].c);
+  self.q7optionD = ko.observable(questions[6].answers[0].d);
+
+  // Question eight answer observables
+  self.q8optionA = ko.observable(questions[7].answers[0].a);
+  self.q8optionB = ko.observable(questions[7].answers[0].b);
+  self.q8optionC = ko.observable(questions[7].answers[0].c);
+  self.q8optionD = ko.observable(questions[7].answers[0].d);
+
+  // Question nine answer observables
+  self.q9optionA = ko.observable(questions[8].answers[0].a);
+  self.q9optionB = ko.observable(questions[8].answers[0].b);
+  self.q9optionC = ko.observable(questions[8].answers[0].c);
+  self.q9optionD = ko.observable(questions[8].answers[0].d);
+
+  // Question ten answer observables
+  self.q10optionA = ko.observable(questions[9].answers[0].a);
+  self.q10optionB = ko.observable(questions[9].answers[0].b);
+  self.q10optionC = ko.observable(questions[9].answers[0].c);
+  self.q10optionD = ko.observable(questions[9].answers[0].d);
+
   // Get value of checked radio buttons and store in array
   var userSelections = ko.observableArray();
   userSelections.push(
