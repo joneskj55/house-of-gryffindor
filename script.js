@@ -34,10 +34,9 @@ function QuizViewModel() {
   self.submit = function () {
     $("#quiz").hide(); // Hide quiz
     $("#crest").show(); // Show crest
-    self.calculate(); // get quiz results
+    self.calculate(); // Get quiz results
     $("#summary").show(); // Show results
 
-    // TODO: Show Score as percentage
     // TODO: Display list of incorrect answers
   };
 
@@ -54,6 +53,7 @@ function QuizViewModel() {
     const userChoice9 = $("input[type=radio][name=q9]:checked").val();
     const userChoice10 = $("input[type=radio][name=q10]:checked").val();
 
+    // Store chosen answers in array
     const userAnswers = [];
     userAnswers.push(
       userChoice1,
@@ -68,10 +68,11 @@ function QuizViewModel() {
       userChoice10
     );
 
-    let correctAnswers = 0;
-    let total = 0;
-    let score = 0;
+    let correctAnswers = 0; // Counter for correct answers
+    let total = 0; // Counter for total correct used to calculate rank & score
+    let score = 0; // Counter for score to be used for tally
 
+    // Iterate over answers array and tally up score
     userAnswers.forEach(function (answer) {
       if (answer === "correct") {
         correctAnswers++;
@@ -80,21 +81,22 @@ function QuizViewModel() {
       }
     });
 
+    // Get rank and score and display in DOM
     if (total <= 5) {
       let rank = document.getElementById("rank");
       rank.innerHTML = "Rank: Beginner";
       let htmlScore = document.getElementById("score");
-      htmlScore.innerHTML = "Score: " + score.toString() * 10;
+      htmlScore.innerHTML = "Score: " + score.toString() * 10 + "%";
     } else if (total <= 8 && total > 5) {
       let rank = document.getElementById("rank");
       rank.innerHTML = "Rank: Novice";
       let htmlScore = document.getElementById("score");
-      htmlScore.innerHTML = "Score: " + score.toString() * 10;
+      htmlScore.innerHTML = "Score: " + score.toString() * 10 + "%";
     } else {
       let rank = document.getElementById("rank");
       rank.innerHTML = "Rank: Expert";
       let htmlScore = document.getElementById("score");
-      htmlScore.innerHTML = "Score: " + score.toString() * 10;
+      htmlScore.innerHTML = "Score: " + score.toString() * 10 + "%";
     }
   };
 
@@ -105,15 +107,15 @@ function QuizViewModel() {
 
   // Back button
   self.back = function () {
-    $("#answers").hide();
-    $("#crest").show();
-    $("#summary").show();
+    $("#answers").hide(); // Hide answers
+    $("#crest").show(); // Show crest
+    $("#summary").show(); // Display quiz summary
   };
 
   // Answers button
   self.answers = function () {
-    $("#summary").hide();
-    $("#answers").show();
+    $("#summary").hide(); // Hide quiz summary
+    $("#answers").show(); // Display answers
   };
 }
 
