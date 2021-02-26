@@ -497,7 +497,7 @@
               <input
                 id="q10optionA"
                 type="radio"
-                name="10"
+                name="q10"
                 value="correct"
                 data-bind="checked: userSelection10"
               />
@@ -550,8 +550,8 @@
       <!--    TEST RESULTS-->
       <div id="summary" class="hidden">
         <h3>Your Results</h3>
-        <h3>Rank:</h3>
-        <h3>Score:</h3>
+        <h3 id="rank"></h3>
+        <h3 id="score">Score:</h3>
         <p>
           <button data-bind="click: retest">RETEST</button>
           <button data-bind="click: answers">ANSWERS</button>
