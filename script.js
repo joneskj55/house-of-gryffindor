@@ -42,6 +42,97 @@ questions = [
     ],
     correctAnswer: "myFunction();",
   },
+  {
+    number: 4,
+    question: "4. Dummy question?",
+    answers: [
+      {
+        a: "/-- This is a comment --/",
+        b: "// This is a comment",
+        c: "correct",
+        d: "<!-- This is a comment -->",
+      },
+    ],
+    correctAnswer: "correct",
+  },
+  {
+    number: 5,
+    question: "5. Dummy question?",
+    answers: [
+      {
+        a: "correct",
+        b: "<java></java>",
+        c: "<javascript></javascript>",
+        d: "<jscript></jscript>",
+      },
+    ],
+    correctAnswer: "correct",
+  },
+  {
+    number: 6,
+    question: "6. Dummy question?",
+    answers: [
+      {
+        a: "myFunction{};",
+        b: "correct",
+        c: "myFunction[];",
+        d: "myFunction();",
+      },
+    ],
+    correctAnswer: "correct",
+  },
+  {
+    number: 7,
+    question: "7. Dummy question?",
+    answers: [
+      {
+        a: "correct",
+        b: "// This is a comment",
+        c: "<%-- This is a comment --%>",
+        d: "<!-- This is a comment -->",
+      },
+    ],
+    correctAnswer: "correct",
+  },
+  {
+    number: 8,
+    question: "8. Dummy question?",
+    answers: [
+      {
+        a: "<script></script>",
+        b: "<java></java>",
+        c: "<javascript></javascript>",
+        d: "correct",
+      },
+    ],
+    correctAnswer: "correct",
+  },
+  {
+    number: 9,
+    question: "9. Dummy question?",
+    answers: [
+      {
+        a: "myFunction{};",
+        b: "$.myFunction;",
+        c: "correct",
+        d: "myFunction();",
+      },
+    ],
+    correctAnswer: "correct",
+  },
+  {
+    number: 10,
+    question: "10. Dummy question?",
+    answers: [
+      {
+        a: "correct",
+        b: "$.myFunction;",
+        c: "myFunction[];",
+        d: "myFunction();",
+      },
+    ],
+    correctAnswer: "correct",
+  },
 ];
 
 function QuizViewModel() {
@@ -51,6 +142,13 @@ function QuizViewModel() {
   self.question1 = ko.observable(questions[0].question);
   self.question2 = ko.observable(questions[1].question);
   self.question3 = ko.observable(questions[2].question);
+  self.question4 = ko.observable(questions[3].question);
+  self.question5 = ko.observable(questions[4].question);
+  self.question6 = ko.observable(questions[5].question);
+  self.question7 = ko.observable(questions[6].question);
+  self.question8 = ko.observable(questions[7].question);
+  self.question9 = ko.observable(questions[8].question);
+  self.question10 = ko.observable(questions[9].question);
 
   // Question one answer observables
   self.q1optionA = ko.observable(questions[0].answers[0].a);
