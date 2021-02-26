@@ -1,3 +1,4 @@
+// Quiz questions array
 questions = [
   {
     number: 1,
