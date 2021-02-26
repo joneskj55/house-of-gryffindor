@@ -31,55 +31,47 @@
       <button id="start" data-bind="click: start">START</button>
       <!-- Question Section -->
       <div id="quiz" class="hidden">
-        <h3>Question 1</h3>
+        <h3 data-bind="text: question1"></h3>
         <div>
           <div>
-            <label for="q1optionA">
-              <input
-                id="q1optionA"
-                type="radio"
-                name="q1"
-                value="a"
-                data-bind="checked: userSelection1"
-              />
-              This is an incorrect answer choice.
-            </label>
+            <input
+              id="q1optionA"
+              type="radio"
+              name="q1"
+              value="a"
+              data-bind="checked: userSelection1"
+            />
+            <label for="q1optionA" data-bind="text: q1optionA"> </label>
           </div>
           <div>
-            <label for="q1optionB">
-              <input
-                id="q1optionB"
-                type="radio"
-                name="q1"
-                value="correct"
-                data-bind="checked: userSelection1"
-              />
-              This is the correct answer.
-            </label>
+            <input
+              id="q1optionB"
+              type="radio"
+              name="q1"
+              value="correct"
+              data-bind="checked: userSelection1"
+            />
+            <label for="q1optionB" data-bind="text: q1optionB"> </label>
           </div>
           <div>
-            <label for="q1optionC">
-              <input
-                id="q1optionC"
-                type="radio"
-                name="q1"
-                value="c"
-                data-bind="checked: userSelection1"
-              />
-              This is an incorrect answer choice.
-            </label>
+            <input
+              id="q1optionC"
+              type="radio"
+              name="q1"
+              value="c"
+              data-bind="checked: userSelection1"
+            />
+            <label for="q1optionC" data-bind="text: q1optionC"> </label>
           </div>
           <div>
-            <label for="q1optionD">
-              <input
-                id="q1optionD"
-                type="radio"
-                name="q1"
-                value="d"
-                data-bind="checked: userSelection1"
-              />
-              This is an incorrect answer choice.
-            </label>
+            <input
+              id="q1optionD"
+              type="radio"
+              name="q1"
+              value="d"
+              data-bind="checked: userSelection1"
+            />
+            <label for="q1optionD" data-bind="text: q1optionD"> </label>
           </div>
         </div>
         <h3>Question 2</h3>

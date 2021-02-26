@@ -1,5 +1,57 @@
+questions = [
+  {
+    number: 1,
+    question:
+      "1. What is the proper way to write a single-line comment in JavaScript?",
+    answers: [
+      {
+        a: "/-- This is a comment --/",
+        b: "// This is a comment",
+        c: "<%-- This is a comment --%>",
+        d: "<-- This is a comment -->",
+      },
+    ],
+    correctAnswer: "// This is a comment",
+  },
+  {
+    number: 2,
+    question: "Question Two Works?",
+    answers: [
+      {
+        a: "q2 correct",
+        b: "q2 first wrong",
+        c: "q2 second wrong",
+        d: "q2 third wrong",
+      },
+    ],
+    correctAnswer: "q2 correct",
+  },
+  {
+    number: 3,
+    question: "Question Three Works?",
+    answers: [
+      {
+        a: "q3 first wrong",
+        b: "q3 second wrong",
+        c: "q3 third wrong",
+        d: "q3 correct",
+      },
+    ],
+    correctAnswer: "q3 correct",
+  },
+];
+
 function QuizViewModel() {
   const self = this;
+
+  // Question observables
+  self.question1 = ko.observable(questions[0].question);
+
+  // Question one answer observables
+  self.q1optionA = ko.observable(questions[0].answers[0].a);
+  self.q1optionB = ko.observable(questions[0].answers[0].b);
+  self.q1optionC = ko.observable(questions[0].answers[0].c);
+  self.q1optionD = ko.observable(questions[0].answers[0].d);
 
   // Get value of checked radio buttons and store in array
   var userSelections = ko.observableArray();
@@ -115,7 +167,8 @@ function QuizViewModel() {
   // Answers button
   self.answers = function () {
     $("#summary").hide(); // Hide quiz summary
-    $("#answers").show(); // Display answers
+    $("#crest").hide(); // Hide crest
+    $("#answers").show(); // Show answers div
   };
 }
 
