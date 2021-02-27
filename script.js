@@ -1,3 +1,11 @@
+/*============================================
+; Title: House Gryffindor JavaScript Trivia
+; Author: Kevin Jones
+; Date: 11 February 2021
+; Description: JavaScript quiz built using
+; Knockout.js
+;===========================================*/
+
 // Quiz questions array
 questions = [
   {
