@@ -496,7 +496,7 @@
       </div>
 
       <!--    TEST RESULTS-->
-      <div id="summary" class="hidden">
+      <div id="summary" class="hidden summary-div">
         <h3>Your Results</h3>
         <h3 id="rank"></h3>
         <h3 id="score"></h3>
@@ -506,7 +506,7 @@
         </p>
       </div>
       <!--  ANSWERS SUMMARY-->
-      <div id="answers" class="hidden">
+      <div id="answers" class="hidden answers-div">
         <h3>Your Answers</h3>
         <div data-bind="foreach: questions">
           <h5 data-bind="text: question"></h5>
@@ -519,10 +519,10 @@
             <li data-bind="text: 'c. ' + $data.c"></li>
             <li data-bind="text: 'd. ' + $data.d"></li>
           </ul>
-          <p>
+          <p style="text-align: left; margin-left: 40%">
             <b>Correct Answer:</b> <span data-bind="text: correctAnswer"></span>
           </p>
-          <p>
+          <p style="text-align: left; margin-left: 40%">
             <b>Your Answer:</b>
             <span data-bind="text: userSelection"></span>
           </p>

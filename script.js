@@ -335,6 +335,7 @@ function QuizViewModel() {
   // Answers button
   self.answers = function () {
     $("#summary").hide(); // Hide quiz summary
+    $("#crest").hide(); // Hide crest
     $("#answers").show(); // Show answers div
   };
 

@@ -9,7 +9,6 @@
 
 * {
   font-family: "Nunito", sans-serif;
-  color: #090909;
   font-size: 16px;
 }
 
@@ -78,4 +77,12 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+.summary-div {
+  color: #f5f6ce;
+}
+
+.answers-div {
+  background-color: #a8322e;
 }
