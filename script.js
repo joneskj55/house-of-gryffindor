@@ -245,7 +245,6 @@ function QuizViewModel() {
 
   // Start quiz
   self.start = function () {
-    self.clear(); // Clear quiz (may not need this)
     $("#start").hide(); // Hide start button
     $(".header").hide(); // Hide header
     $(".sub-header").hide(); // Hide subheader
