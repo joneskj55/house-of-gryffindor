@@ -10,7 +10,7 @@ function QuizViewModel() {
   const self = this;
 
   // Get value of checked radio buttons and store in array
-  var userSelections = ko.observableArray();
+  const userSelections = ko.observableArray();
   userSelections.push(
     (self.userSelection1 = ko.observable()),
     (self.userSelection2 = ko.observable()),
