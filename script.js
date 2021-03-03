@@ -73,7 +73,7 @@ function QuizViewModel() {
     },
     {
       number: 4,
-      question: "4. Which is a valid way to create an array?",
+      question: "4. Which of the following is a valid way to create an array?",
       answers: [
         {
           a: "let cereal = ['cheerios', 'pops'];",
