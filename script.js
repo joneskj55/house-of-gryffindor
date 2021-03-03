@@ -38,7 +38,7 @@ function QuizViewModel() {
           d: "<!-- This is a comment -->",
         },
       ],
-      correctAnswer: "// This is a comment",
+      correctAnswer: "b",
       userSelection: self.userSelection1,
     },
     {
@@ -53,7 +53,7 @@ function QuizViewModel() {
           d: "<jscript></jscript>",
         },
       ],
-      correctAnswer: "<script></script>",
+      correctAnswer: "a",
       userSelection: self.userSelection2,
     },
     {
@@ -68,7 +68,7 @@ function QuizViewModel() {
           d: "myFunction();",
         },
       ],
-      correctAnswer: "myFunction();",
+      correctAnswer: "d",
       userSelection: self.userSelection3,
     },
     {
@@ -82,7 +82,7 @@ function QuizViewModel() {
           d: "All of the above",
         },
       ],
-      correctAnswer: "All of the above",
+      correctAnswer: "d",
       userSelection: self.userSelection4,
     },
     {
@@ -96,7 +96,7 @@ function QuizViewModel() {
           d: "<jscript></jscript>",
         },
       ],
-      correctAnswer: "correct",
+      correctAnswer: "a",
       userSelection: self.userSelection5,
     },
     {
@@ -110,7 +110,7 @@ function QuizViewModel() {
           d: "myFunction();",
         },
       ],
-      correctAnswer: "correct",
+      correctAnswer: "b",
       userSelection: self.userSelection6,
     },
     {
@@ -124,7 +124,7 @@ function QuizViewModel() {
           d: "<!-- This is a comment -->",
         },
       ],
-      correctAnswer: "correct",
+      correctAnswer: "a",
       userSelection: self.userSelection7,
     },
     {
@@ -138,7 +138,7 @@ function QuizViewModel() {
           d: "correct",
         },
       ],
-      correctAnswer: "correct",
+      correctAnswer: "d",
       userSelection: self.userSelection8,
     },
     {
@@ -152,7 +152,7 @@ function QuizViewModel() {
           d: "myFunction();",
         },
       ],
-      correctAnswer: "correct",
+      correctAnswer: "c",
       userSelection: self.userSelection9,
     },
     {
@@ -166,7 +166,7 @@ function QuizViewModel() {
           d: "myFunction();",
         },
       ],
-      correctAnswer: "correct",
+      correctAnswer: "a",
       userSelection: self.userSelection10,
     },
   ];
