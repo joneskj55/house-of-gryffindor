@@ -73,16 +73,16 @@ function QuizViewModel() {
     },
     {
       number: 4,
-      question: "4. Dummy question?",
+      question: "4. Which is a valid way to create an array?",
       answers: [
         {
-          a: "/-- This is a comment --/",
-          b: "// This is a comment",
-          c: "correct",
-          d: "<!-- This is a comment -->",
+          a: "let cereal = ['cheerios', 'pops'];",
+          b: "const cereal = ['cheerios', 'pops'];",
+          c: "var cereal = ['cheerios', 'pops'];",
+          d: "All of the above",
         },
       ],
-      correctAnswer: "correct",
+      correctAnswer: "All of the above",
       userSelection: self.userSelection4,
     },
     {
