@@ -112,6 +112,7 @@ ul {
   #quiz,
   label {
     text-align: left;
+    padding: 0.5em;
   }
   p {
     text-align: center;
@@ -120,5 +121,8 @@ ul {
   ul {
     margin: 0;
     padding: 0;
+  }
+  .answers-div {
+    text-align: left;
   }
 }
