@@ -3,7 +3,7 @@
 ; Author: Kevin Jones
 ; Date: 11 February 2021
 ; Description: JavaScript quiz built using
-; Knockout.js
+; Knockout.js (JavaScript file)
 ;===========================================*/
 
 function QuizViewModel() {

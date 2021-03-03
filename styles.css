@@ -4,7 +4,7 @@
 ; Date: 11 February 2021
 ; Modified by: Kevin Jones
 ; Description: JavaScript quiz built using
-; Knockout.js
+; Knockout.js (CSS file)
 ;===========================================*/
 
 * {
@@ -85,4 +85,31 @@ button:hover {
 
 .answers-div {
   background-color: #a8322e;
+}
+
+ul {
+  list-style: none;
+}
+
+@media (max-width: 414px) {
+  #knockout-app {
+    overflow: hidden;
+  }
+  #crest {
+    width: 320px;
+    padding-bottom: 0;
+  }
+  .header {
+    font-size: 2em;
+  }
+  #quiz,
+  label {
+    text-align: left;
+  }
+  p {
+    text-align: center;
+  }
+  .answers-left {
+    text-align: left;
+  }
 }
