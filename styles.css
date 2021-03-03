@@ -91,7 +91,7 @@ ul {
   list-style: none;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 768px) {
   #knockout-app {
     overflow: hidden;
   }
@@ -111,5 +111,9 @@ ul {
   }
   .answers-left {
     text-align: left;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
   }
 }
