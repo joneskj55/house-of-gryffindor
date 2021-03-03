@@ -309,7 +309,6 @@ function QuizViewModel() {
       rank.innerHTML = "Rank: Expert";
       let htmlScore = document.getElementById("score");
       htmlScore.innerHTML = "Score: " + score.toString() * 10 + "%";
-      // TODO: Confetti rains on screen if user is expert level
     }
   };
 
