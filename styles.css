@@ -125,4 +125,7 @@ ul {
   .answers-div {
     text-align: left;
   }
+  .radios {
+    width: 276px;
+  }
 }
