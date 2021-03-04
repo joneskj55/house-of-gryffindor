@@ -87,13 +87,13 @@ function QuizViewModel() {
     },
     {
       number: 5,
-      question: "5. Dummy question?",
+      question: "5. How do you declare a variable in JavaScript?",
       answers: [
         {
-          a: "correct",
-          b: "<java></java>",
-          c: "<javascript></javascript>",
-          d: "<jscript></jscript>",
+          a: "let myVariable = 23;",
+          b: "let myVariable == 23;",
+          c: "let myVariable === 23;",
+          d: "myVariable = 23;",
         },
       ],
       correctAnswer: "a",
@@ -101,13 +101,13 @@ function QuizViewModel() {
     },
     {
       number: 6,
-      question: "6. Dummy question?",
+      question: "6. How do you add an item to the end of an array?",
       answers: [
         {
-          a: "myFunction{};",
-          b: "correct",
-          c: "myFunction[];",
-          d: "myFunction();",
+          a: ".shift()",
+          b: ".push()",
+          c: ".pop()",
+          d: ".unshift()",
         },
       ],
       correctAnswer: "b",
@@ -115,13 +115,13 @@ function QuizViewModel() {
     },
     {
       number: 7,
-      question: "7. Dummy question?",
+      question: "7. Which of the following is not a JavaScript data type?",
       answers: [
         {
-          a: "correct",
-          b: "// This is a comment",
-          c: "<%-- This is a comment --%>",
-          d: "<!-- This is a comment -->",
+          a: "Selector",
+          b: "Boolean",
+          c: "String",
+          d: "Number",
         },
       ],
       correctAnswer: "a",
@@ -129,13 +129,13 @@ function QuizViewModel() {
     },
     {
       number: 8,
-      question: "8. Dummy question?",
+      question: "8. How do you loop over a JavaScript array?",
       answers: [
         {
-          a: "<script></script>",
-          b: "<java></java>",
-          c: "<javascript></javascript>",
-          d: "correct",
+          a: "array.loop()",
+          b: "array.for()",
+          c: "array.loopOver()",
+          d: "array.forEach()",
         },
       ],
       correctAnswer: "d",
@@ -143,13 +143,14 @@ function QuizViewModel() {
     },
     {
       number: 9,
-      question: "9. Dummy question?",
+      question:
+        "9. Which of the following is not a loop structure in JavaScript?",
       answers: [
         {
-          a: "myFunction{};",
-          b: "$.myFunction;",
-          c: "correct",
-          d: "myFunction();",
+          a: "do-while",
+          b: "for",
+          c: "when",
+          d: "while",
         },
       ],
       correctAnswer: "c",
@@ -157,13 +158,13 @@ function QuizViewModel() {
     },
     {
       number: 10,
-      question: "10. Dummy question?",
+      question: "10. How would you access the third index of an array?",
       answers: [
         {
-          a: "correct",
-          b: "$.myFunction;",
-          c: "myFunction[];",
-          d: "myFunction();",
+          a: "array[2]",
+          b: "array[third]",
+          c: "array[4]",
+          d: "array[3]",
         },
       ],
       correctAnswer: "a",
