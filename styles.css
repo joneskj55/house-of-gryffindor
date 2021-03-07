@@ -7,6 +7,10 @@
 ; Knockout.js (CSS file)
 ;===========================================*/
 
+
+/* =========================== *
+*        GENERAL STYLES        *
+*  =========================== */
 * {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
@@ -17,19 +21,15 @@ body {
   padding: 1em;
 }
 
-.header,
-.sub-header {
-  font-family: "Jim Nightshade", cursive;
-  color: #f5f6ce;
-  letter-spacing: 5px;
-  font-size: 4em;
+h3 {
+  font-size: 1.5em;
 }
 
-.sub-header {
-  letter-spacing: 2px;
-  font-size: 2em;
+.hidden {
+  display: none;
 }
 
+/* Main container */
 #knockout-app {
   background-color: #721e1c;
   text-align: center;
@@ -39,6 +39,7 @@ body {
   box-shadow: 0 0 12px 2px #090909;
 }
 
+/* Gryffindor crest */
 #crest {
   display: block;
   width: 350px;
@@ -46,21 +47,7 @@ body {
   padding-bottom: 1em;
 }
 
-#quiz {
-  background-color: #e1423d;
-  padding: 2em 0;
-}
-
-.radios {
-  margin: 0 auto;
-  width: 260px;
-  text-align: left;
-}
-
-h3 {
-  font-size: 1.5em;
-}
-
+/* Button styles */
 button {
   background-color: #ecad43;
   border: none;
@@ -80,15 +67,40 @@ button:hover {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+/*==============================*/
 
-.hidden {
-  display: none;
+/* Start quiz styles */
+.header,
+.sub-header {
+  font-family: "Jim Nightshade", cursive;
+  color: #f5f6ce;
+  letter-spacing: 5px;
+  font-size: 4em;
 }
 
+.sub-header {
+  letter-spacing: 2px;
+  font-size: 2em;
+}
+
+/* Quiz styles */
+#quiz {
+  background-color: #e1423d;
+  padding: 2em 0;
+}
+
+.radios {
+  margin: 0 auto;
+  width: 260px;
+  text-align: left;
+}
+
+/* Summary styles */
 .summary-div {
   color: #f5f6ce;
 }
 
+/* Quiz answers styles */
 .answers-div {
   background-color: #e1443d;
   padding: 0.5em;
@@ -98,22 +110,28 @@ ul {
   list-style: none;
 }
 
+
+/* Responsive Media Queries */
 @media (max-width: 768px) {
   #knockout-app {
     overflow: hidden;
   }
+
   #crest {
     width: 320px;
     padding-bottom: 0;
   }
+
   .header {
     font-size: 2em;
   }
+
   #quiz,
   label {
     text-align: left;
     padding: 0.5em;
   }
+
   p {
     text-align: center;
   }
@@ -122,9 +140,11 @@ ul {
     margin: 0;
     padding: 0;
   }
+
   .answers-div {
     text-align: left;
   }
+
   .radios {
     width: 276px;
   }
