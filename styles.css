@@ -1,17 +1,79 @@
+/*============================================
+; Title: House Gryffindor JavaScript Trivia
+; Author: Mark Watson
+; Date: 11 February 2021
+; Modified by: Kevin Jones
+; Description: JavaScript quiz built using
+; Knockout.js (CSS file)
+;===========================================*/
+
+
+/* =========================== *
+*        GENERAL STYLES        *
+*  =========================== */
 * {
-  font-family: 'Nunito', sans-serif;
-  color: #090909;
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
 }
 
 body {
-  background-color: #ECAD43;
+  background-color: #ecad43;
   padding: 1em;
 }
 
-.header, .sub-header {
-  font-family: 'Jim Nightshade', cursive;
-  color: #F5F6CE;
+h3 {
+  font-size: 1.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Main container */
+#knockout-app {
+  background-color: #721e1c;
+  text-align: center;
+  padding: 2em 0;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 12px 2px #090909;
+  box-shadow: 0 0 12px 2px #090909;
+}
+
+/* Gryffindor crest */
+#crest {
+  display: block;
+  width: 350px;
+  margin: auto;
+  padding-bottom: 1em;
+}
+
+/* Button styles */
+button {
+  background-color: #ecad43;
+  border: none;
+  color: #090909;
+  font-weight: 700;
+  padding: 12px 24px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 3px 1px #a06100;
+  box-shadow: 0 0 3px 1px #a06100;
+}
+
+button:hover {
+  background-color: #d3942a;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/*==============================*/
+
+/* Start quiz styles */
+.header,
+.sub-header {
+  font-family: "Jim Nightshade", cursive;
+  color: #f5f6ce;
   letter-spacing: 5px;
   font-size: 4em;
 }
@@ -21,51 +83,69 @@ body {
   font-size: 2em;
 }
 
-#knockout-app {
-  background-color: #721E1C;
-  text-align: center;
-  padding: 2em 0;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 12px 2px #090909;
-  box-shadow: 0 0 12px 2px #090909;
-}
-
-#crest {
-  display: block;
-  width: 350px;
-  margin: auto;
-  padding-bottom: 1em;
-}
-
+/* Quiz styles */
 #quiz {
-  background-color: #A8322E;
+  background-color: #e1423d;
   padding: 2em 0;
 }
 
-h3 {
-  font-size: 1.5em;
+.radios {
+  margin: 0 auto;
+  width: 260px;
+  text-align: left;
 }
 
-button {
-  background-color: #ECAD43;
-  border: none;
-  color: #090909;
-  font-weight: 700;
-  padding: 12px 24px;
-  margin: 5px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-box-shadow: 0 0 3px 1px #A06100;
-  box-shadow: 0 0 3px 1px #A06100;
+/* Summary styles */
+.summary-div {
+  color: #f5f6ce;
 }
 
-button:hover {
-  background-color: #D3942A;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+/* Quiz answers styles */
+.answers-div {
+  background-color: #e1443d;
+  padding: 0.5em;
 }
 
-.hidden {
-  display: none;
+ul {
+  list-style: none;
+}
+
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  #knockout-app {
+    overflow: hidden;
+  }
+
+  #crest {
+    width: 320px;
+    padding-bottom: 0;
+  }
+
+  .header {
+    font-size: 2em;
+  }
+
+  #quiz,
+  label {
+    text-align: left;
+    padding: 0.5em;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .answers-div {
+    text-align: left;
+  }
+
+  .radios {
+    width: 276px;
+  }
 }
