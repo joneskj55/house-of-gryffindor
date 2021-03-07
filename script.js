@@ -73,13 +73,13 @@ function QuizViewModel() {
     },
     {
       number: 4,
-      question: "4. Which of the following is a valid way to create an array?",
+      question: "4. Which of the following not a JavaScript design pattern?",
       answers: [
         {
-          a: "let cereal = ['cheerios', 'pops'];",
-          b: "const cereal = ['cheerios', 'pops'];",
-          c: "var cereal = ['cheerios', 'pops'];",
-          d: "All of the above",
+          a: "Factory",
+          b: "Singleton",
+          c: "Prototype",
+          d: "Doubleton",
         },
       ],
       correctAnswer: "d",
@@ -129,13 +129,14 @@ function QuizViewModel() {
     },
     {
       number: 8,
-      question: "8. How do you loop over a JavaScript array?",
+      question:
+        "8. Which of the following is not a software architectural pattern?",
       answers: [
         {
-          a: "array.loop()",
-          b: "array.for()",
-          c: "array.loopOver()",
-          d: "array.forEach()",
+          a: "MVC",
+          b: "MVVM",
+          c: "MVP",
+          d: "MTV",
         },
       ],
       correctAnswer: "d",
@@ -158,13 +159,13 @@ function QuizViewModel() {
     },
     {
       number: 10,
-      question: "10. How would you access the third index of an array?",
+      question: "10. Which of the following is an MVVM JavaScript library?",
       answers: [
         {
-          a: "array[2]",
-          b: "array[third]",
-          c: "array[4]",
-          d: "array[3]",
+          a: "Knockout.js",
+          b: "Jab.js",
+          c: "TKO.js",
+          d: "Hook.js",
         },
       ],
       correctAnswer: "a",
