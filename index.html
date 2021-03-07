@@ -1,332 +1,545 @@
+<!--============================================
+; Title: House Gryffindor JavaScript Trivia
+; Author: Adam Luna
+; Date: 10 February 2021
+; Modified by: Kevin Jones & Mark Watson
+; Description: JavaScript quiz built using
+; Knockout.js (HTML file)
+;===========================================-->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <title>JavaScript Trivia</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Imported Font Styles -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Nunito:wght@400;700&display=swap"
-        rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>JavaScript Trivia</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Imported Font Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="knockout-app">
+      <h1 class="header">
+        House Gryffindor's<br />
+        JavaScript Trivia
+      </h1>
+      <img
+        id="crest"
+        src="img/gryffindor.jpg"
+        width="350"
+        height="402"
+        alt="House Gryffindor crest"
+      />
+      <h2 class="sub-header">Test Your JS Knowledge</h2>
 
-<div id="knockout-app">
-  <h1 class="header">
-    House Gryffindor's<br>
-    JavaScript Trivia
-  </h1>
-  <img id="crest" src="img/gryffindor.jpg" width="350" height="402" alt="House Gryffindor crest">
-  <h2 class="sub-header">Test Your JS Knowledge</h2>
-  <!-- Click the button below to begin the quiz -->
-  <button id="start" data-bind="click: start">START</button>
-  <!-- Question Section -->
-  <div id="quiz" class="hidden">
-    <h3>Question 1</h3>
-    <div>
-      <div>
-        <label for="q1optionA">
-          <input id="q1optionA" type="radio" name="q1" value="a" data-bind="checked: userSelection1"/>
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q1optionB">
-          <input id="q1optionB" type="radio" name="q1" value="correct" data-bind="checked: userSelection1"/>
-          This is the correct answer.
-        </label>
-      </div>
-      <div>
-        <label for="q1optionC">
-          <input id="q1optionC" type="radio" name="q1" value="c" data-bind="checked: userSelection1">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q1optionD">
-          <input id="q1optionD" type="radio" name="q1" value="d" data-bind="checked: userSelection1">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-    </div>
-    <h3>Question 2</h3>
-    <div>
-      <div>
-        <label for="q2optionA">
-          <input id="q2optionA" type="radio" name="q2" value="correct" data-bind="checked: userSelection2">
-          This is the correct answer.
-        </label>
-      </div>
-      <div>
-        <label for="q2optionB">
-          <input id="q2optionB" type="radio" name="q2" value="b" data-bind="checked: userSelection2">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q2optionC">
-          <input id="q2optionC" type="radio" name="q2" value="c" data-bind="checked: userSelection2">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q2optionD">
-          <input id="q2optionD" type="radio" name="q2" value="d" data-bind="checked: userSelection2">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-    </div>
-    <h3>Question 3</h3>
-    <div>
-      <div>
-        <label for="q3optionA">
-          <input id="q3optionA" type="radio" name="q3" value="a" data-bind="checked: userSelection3">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q3optionB">
-          <input id="q3optionB" type="radio" name="q3" value="b" data-bind="checked: userSelection3">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q3optionC">
-          <input id="q3optionC" type="radio" name="q3" value="c" data-bind="checked: userSelection3"
-          >
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q3optionD">
-          <input id="q3optionD" type="radio" name="q3" value="correct" data-bind="checked: userSelection3">
-          This is the correct answer.
-        </label>
-      </div>
-    </div>
-    <h3>Question 4</h3>
-    <div>
-      <div>
-        <label for="q4optionA">
-          <input id="q4optionA" type="radio" name="q4" value="a" data-bind="checked: userSelection4">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q4optionB">
-          <input id="q4optionB" type="radio" name="q4" value="b" data-bind="checked: userSelection4">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q4optionC">
-          <input id="q4optionC" type="radio" name="q4" value="correct" data-bind="checked: userSelection4">
-          This is the correct answer.
-        </label>
-      </div>
-      <div>
-        <label for="q4optionD">
-          <input id="q4optionD" type="radio" name="q4" value="d" data-bind="checked: userSelection4">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-    </div>
-    <h3>Question 5</h3>
-    <div>
-      <div>
-        <label for="q5optionA">
-          <input id="q5optionA" type="radio" name="q5" value="correct" data-bind="checked: userSelection5">
-          This is the correct answer.
-        </label>
-      </div>
-      <div>
-        <label for="q5optionB">
-          <input id="q5optionB" type="radio" name="q5" value="b" data-bind="checked: userSelection5">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q5optionC">
-          <input id="q5optionC" type="radio" name="q5" value="c" data-bind="checked: userSelection5">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q5optionD">
-          <input id="q5optionD" type="radio" name="q5" value="d" data-bind="checked: userSelection5">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-    </div>
-    <h3>Question 6</h3>
-    <div>
-      <div>
-        <label for="q6optionA">
-          <input id="q6optionA" type="radio" name="q6" value="a" data-bind="checked: userSelection6"/>
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q6optionB">
-          <input id="q6optionB" type="radio" name="q6" value="correct" data-bind="checked: userSelection6"/>
-          This is the correct answer.
-        </label>
-      </div>
-      <div>
-        <label for="q6optionC">
-          <input id="q6optionC" type="radio" name="q6" value="c" data-bind="checked: userSelection6">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q6optionD">
-          <input id="q6optionD" type="radio" name="q6" value="d" data-bind="checked: userSelection6">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-    </div>
-    <h3>Question 7</h3>
-    <div>
-      <div>
-        <label for="q7optionA">
-          <input id="q7optionA" type="radio" name="q7" value="correct" data-bind="checked: userSelection7">
-          This is the correct answer.
-        </label>
-      </div>
-      <div>
-        <label for="q7optionB">
-          <input id="q7optionB" type="radio" name="q7" value="b" data-bind="checked: userSelection7">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q7optionC">
-          <input id="q7optionC" type="radio" name="q7" value="c" data-bind="checked: userSelection7">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q7optionD">
-          <input id="q7optionD" type="radio" name="q7" value="d" data-bind="checked: userSelection7">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-    </div>
-    <h3>Question 8</h3>
-    <div>
-      <div>
-        <label for="q8optionA">
-          <input id="q8optionA" type="radio" name="q8" value="a" data-bind="checked: userSelection8">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q8optionB">
-          <input id="q8optionB" type="radio" name="q8" value="b" data-bind="checked: userSelection8">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q8optionC">
-          <input id="q8optionC" type="radio" name="q8" value="c" data-bind="checked: userSelection8"
-          >
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q8optionD">
-          <input id="q8optionD" type="radio" name="q8" value="correct" data-bind="checked: userSelection8">
-          This is the correct answer.
-        </label>
-      </div>
-    </div>
-    <h3>Question 9</h3>
-    <div>
-      <div>
-        <label for="q9optionA">
-          <input id="q9optionA" type="radio" name="q9" value="a" data-bind="checked: userSelection9">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q9optionB">
-          <input id="q9optionB" type="radio" name="q9" value="b" data-bind="checked: userSelection9">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q9optionC">
-          <input id="q9optionC" type="radio" name="q9" value="correct" data-bind="checked: userSelection9">
-          This is the correct answer.
-        </label>
-      </div>
-      <div>
-        <label for="q9optionD">
-          <input id="q9optionD" type="radio" name="q9" value="d" data-bind="checked: userSelection9">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-    </div>
-    <h3>Question 10</h3>
-    <div>
-      <div>
-        <label for="q10optionA">
-          <input id="q10optionA" type="radio" name="10" value="correct" data-bind="checked: userSelection10">
-          This is the correct answer.
-        </label>
-      </div>
-      <div>
-        <label for="q10optionB">
-          <input id="q10optionB" type="radio" name="q10" value="b" data-bind="checked: userSelection10">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q10optionC">
-          <input id="q10optionC" type="radio" name="q10" value="c" data-bind="checked: userSelection10">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-      <div>
-        <label for="q10optionD">
-          <input id="q10optionD" type="radio" name="q10" value="d" data-bind="checked: userSelection10">
-          This is an incorrect answer choice.
-        </label>
-      </div>
-    </div>
-    <p>
-      <button class="quiz-btn" data-bind="click: clear">CLEAR</button>
-      <button class="quiz-btn" data-bind="click: submit">SUBMIT</button>
-    </p>
-  </div>
+      <button id="start" data-bind="click: start">START</button>
 
-  <!--    TEST RESULTS-->
-  <div id="summary" class="hidden">
-    <h3>Your Results</h3>
-    <h3>Rank:</h3>
-    <h3>Score:</h3>
-    <p>
-      <button data-bind="click: start">RETEST</button>
-      <button data-bind="click: answers">ANSWERS</button>
-    </p>
-  </div>
-<!--  ANSWERS SUMMARY-->
-  <div id="answers" class="hidden">
-    <h3>Your Answers</h3>
-    <p>
-      <button data-bind="click: back">BACK</button>
-      <button data-bind="click: retest">RETEST</button>
-    </p>
-  </div>
-</div>
+      <div id="quiz" class="hidden">
+        <!--        QUESTION 1-->
+        <h3 data-bind="text: question1"></h3>
+        <div class="radios">
+          <div>
+            <input
+              id="q1optionA"
+              type="radio"
+              name="q1"
+              value="a"
+              data-bind="checked: userSelection1"
+            />
+            <label for="q1optionA" data-bind="text: q1optionA"> </label>
+          </div>
+          <div>
+            <input
+              id="q1optionB"
+              type="radio"
+              name="q1"
+              value="correct"
+              data-bind="checked: userSelection1"
+            />
+            <label for="q1optionB" data-bind="text: q1optionB"> </label>
+          </div>
+          <div>
+            <input
+              id="q1optionC"
+              type="radio"
+              name="q1"
+              value="c"
+              data-bind="checked: userSelection1"
+            />
+            <label for="q1optionC" data-bind="text: q1optionC"> </label>
+          </div>
+          <div>
+            <input
+              id="q1optionD"
+              type="radio"
+              name="q1"
+              value="d"
+              data-bind="checked: userSelection1"
+            />
+            <label for="q1optionD" data-bind="text: q1optionD"> </label>
+          </div>
+        </div>
 
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"
-        integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA=="
-        crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-<script src="script.js"></script>
+        <!--        QUESTION 2-->
+        <h3 data-bind="text: question2"></h3>
+        <div class="radios">
+          <div>
+            <input
+              id="q2optionA"
+              type="radio"
+              name="q2"
+              value="correct"
+              data-bind="checked: userSelection2"
+            />
+            <label for="q2optionA" data-bind="text: q2optionA"> </label>
+          </div>
+          <div>
+            <input
+              id="q2optionB"
+              type="radio"
+              name="q2"
+              value="b"
+              data-bind="checked: userSelection2"
+            />
+            <label for="q2optionB" data-bind="text: q2optionB"> </label>
+          </div>
+          <div>
+            <input
+              id="q2optionC"
+              type="radio"
+              name="q2"
+              value="c"
+              data-bind="checked: userSelection2"
+            />
+            <label for="q2optionC" data-bind="text: q2optionC"> </label>
+          </div>
+          <div>
+            <input
+              id="q2optionD"
+              type="radio"
+              name="q2"
+              value="d"
+              data-bind="checked: userSelection2"
+            />
+            <label for="q2optionD" data-bind="text: q2optionD"> </label>
+          </div>
+        </div>
+
+        <!--        QUESTION 3-->
+        <h3 data-bind="text: question3"></h3>
+        <div class="radios">
+          <div>
+            <input
+              id="q3optionA"
+              type="radio"
+              name="q3"
+              value="a"
+              data-bind="checked: userSelection3"
+            />
+            <label for="q3optionA" data-bind="text: q3optionA"> </label>
+          </div>
+          <div>
+            <input
+              id="q3optionB"
+              type="radio"
+              name="q3"
+              value="b"
+              data-bind="checked: userSelection3"
+            />
+            <label for="q3optionB" data-bind="text: q3optionB"> </label>
+          </div>
+          <div>
+            <input
+              id="q3optionC"
+              type="radio"
+              name="q3"
+              value="c"
+              data-bind="checked: userSelection3"
+            />
+            <label for="q3optionC" data-bind="text: q3optionC"> </label>
+          </div>
+          <div>
+            <input
+              id="q3optionD"
+              type="radio"
+              name="q3"
+              value="correct"
+              data-bind="checked: userSelection3"
+            />
+            <label for="q3optionD" data-bind="text: q3optionD"> </label>
+          </div>
+        </div>
+
+        <!--        QUESTION 4-->
+        <h3 data-bind="text: question4"></h3>
+        <div class="radios">
+          <div>
+            <input
+              id="q4optionA"
+              type="radio"
+              name="q4"
+              value="a"
+              data-bind="checked: userSelection4"
+            />
+            <label for="q4optionA" data-bind="text: q4optionA"> </label>
+          </div>
+          <div>
+            <input
+              id="q4optionB"
+              type="radio"
+              name="q4"
+              value="b"
+              data-bind="checked: userSelection4"
+            />
+            <label for="q4optionB" data-bind="text: q4optionB"> </label>
+          </div>
+          <div>
+            <input
+              id="q4optionC"
+              type="radio"
+              name="q4"
+              value="c"
+              data-bind="checked: userSelection4"
+            />
+            <label for="q4optionC" data-bind="text: q4optionC"> </label>
+          </div>
+          <div>
+            <input
+              id="q4optionD"
+              type="radio"
+              name="q4"
+              value="correct"
+              data-bind="checked: userSelection4"
+            />
+            <label for="q4optionD" data-bind="text: q4optionD"> </label>
+          </div>
+        </div>
+
+        <!--        QUESTION 5-->
+        <h3 data-bind="text: question5"></h3>
+        <div class="radios">
+          <div>
+            <input
+              id="q5optionA"
+              type="radio"
+              name="q5"
+              value="correct"
+              data-bind="checked: userSelection5"
+            />
+            <label for="q5optionA" data-bind="text: q5optionA"> </label>
+          </div>
+          <div>
+            <input
+              id="q5optionB"
+              type="radio"
+              name="q5"
+              value="b"
+              data-bind="checked: userSelection5"
+            />
+            <label for="q5optionB" data-bind="text: q5optionB"> </label>
+          </div>
+          <div>
+            <input
+              id="q5optionC"
+              type="radio"
+              name="q5"
+              value="c"
+              data-bind="checked: userSelection5"
+            />
+            <label for="q5optionC" data-bind="text: q5optionC"> </label>
+          </div>
+          <div>
+            <input
+              id="q5optionD"
+              type="radio"
+              name="q5"
+              value="d"
+              data-bind="checked: userSelection5"
+            />
+            <label for="q5optionD" data-bind="text: q5optionD"> </label>
+          </div>
+        </div>
+
+        <!--        QUESTION 6-->
+        <h3 data-bind="text: question6"></h3>
+        <div class="radios">
+          <div>
+            <input
+              id="q6optionA"
+              type="radio"
+              name="q6"
+              value="a"
+              data-bind="checked: userSelection6"
+            />
+            <label for="q6optionA" data-bind="text: q6optionA"> </label>
+          </div>
+          <div>
+            <input
+              id="q6optionB"
+              type="radio"
+              name="q6"
+              value="correct"
+              data-bind="checked: userSelection6"
+            />
+            <label for="q6optionB" data-bind="text: q6optionB"> </label>
+          </div>
+          <div>
+            <input
+              id="q6optionC"
+              type="radio"
+              name="q6"
+              value="c"
+              data-bind="checked: userSelection6"
+            />
+            <label for="q6optionC" data-bind="text: q6optionC"> </label>
+          </div>
+          <div>
+            <input
+              id="q6optionD"
+              type="radio"
+              name="q6"
+              value="d"
+              data-bind="checked: userSelection6"
+            />
+            <label for="q6optionD" data-bind="text: q6optionD"> </label>
+          </div>
+        </div>
+
+        <!--        QUESTION 7-->
+        <h3 data-bind="text: question7"></h3>
+        <div class="radios">
+          <div>
+            <input
+              id="q7optionA"
+              type="radio"
+              name="q7"
+              value="correct"
+              data-bind="checked: userSelection7"
+            />
+            <label for="q7optionA" data-bind="text: q7optionA"> </label>
+          </div>
+          <div>
+            <input
+              id="q7optionB"
+              type="radio"
+              name="q7"
+              value="b"
+              data-bind="checked: userSelection7"
+            />
+            <label for="q7optionB" data-bind="text: q7optionB"> </label>
+          </div>
+          <div>
+            <input
+              id="q7optionC"
+              type="radio"
+              name="q7"
+              value="c"
+              data-bind="checked: userSelection7"
+            />
+            <label for="q7optionC" data-bind="text: q7optionC"> </label>
+          </div>
+          <div>
+            <input
+              id="q7optionD"
+              type="radio"
+              name="q7"
+              value="d"
+              data-bind="checked: userSelection7"
+            />
+            <label for="q7optionD" data-bind="text: q7optionD"> </label>
+          </div>
+        </div>
+
+        <!--        QUESTION 8-->
+        <h3 data-bind="text: question8"></h3>
+        <div class="radios">
+          <div>
+            <input
+              id="q8optionA"
+              type="radio"
+              name="q8"
+              value="a"
+              data-bind="checked: userSelection8"
+            />
+            <label for="q8optionA" data-bind="text: q8optionA"> </label>
+          </div>
+          <div>
+            <input
+              id="q8optionB"
+              type="radio"
+              name="q8"
+              value="b"
+              data-bind="checked: userSelection8"
+            />
+            <label for="q8optionB" data-bind="text: q8optionB"> </label>
+          </div>
+          <div>
+            <input
+              id="q8optionC"
+              type="radio"
+              name="q8"
+              value="c"
+              data-bind="checked: userSelection8"
+            />
+            <label for="q8optionC" data-bind="text: q8optionC"> </label>
+          </div>
+          <div>
+            <input
+              id="q8optionD"
+              type="radio"
+              name="q8"
+              value="correct"
+              data-bind="checked: userSelection8"
+            />
+            <label for="q8optionD" data-bind="text: q8optionD"> </label>
+          </div>
+        </div>
+
+        <!--        QUESTION 9-->
+        <h3 data-bind="text: question9"></h3>
+        <div class="radios">
+          <div>
+            <input
+              id="q9optionA"
+              type="radio"
+              name="q9"
+              value="a"
+              data-bind="checked: userSelection9"
+            />
+            <label for="q9optionA" data-bind="text: q9optionA"> </label>
+          </div>
+          <div>
+            <input
+              id="q9optionB"
+              type="radio"
+              name="q9"
+              value="b"
+              data-bind="checked: userSelection9"
+            />
+            <label for="q9optionB" data-bind="text: q9optionB"> </label>
+          </div>
+          <div>
+            <input
+              id="q9optionC"
+              type="radio"
+              name="q9"
+              value="correct"
+              data-bind="checked: userSelection9"
+            />
+            <label for="q9optionC" data-bind="text: q9optionC"> </label>
+          </div>
+          <div>
+            <input
+              id="q9optionD"
+              type="radio"
+              name="q9"
+              value="d"
+              data-bind="checked: userSelection9"
+            />
+            <label for="q9optionD" data-bind="text: q9optionD"> </label>
+          </div>
+        </div>
+
+        <!--        QUESTION 10-->
+        <h3 data-bind="text: question10"></h3>
+        <div class="radios">
+          <div>
+            <input
+              id="q10optionA"
+              type="radio"
+              name="q10"
+              value="correct"
+              data-bind="checked: userSelection10"
+            />
+            <label for="q10optionA" data-bind="text: q10optionA"> </label>
+          </div>
+          <div>
+            <input
+              id="q10optionB"
+              type="radio"
+              name="q10"
+              value="b"
+              data-bind="checked: userSelection10"
+            />
+            <label for="q10optionB" data-bind="text: q10optionB"> </label>
+          </div>
+          <div>
+            <input
+              id="q10optionC"
+              type="radio"
+              name="q10"
+              value="c"
+              data-bind="checked: userSelection10"
+            />
+            <label for="q10optionC" data-bind="text: q10optionC"> </label>
+          </div>
+          <div>
+            <input
+              id="q10optionD"
+              type="radio"
+              name="q10"
+              value="d"
+              data-bind="checked: userSelection10"
+            />
+            <label for="q10optionD" data-bind="text: q10optionD"> </label>
+          </div>
+        </div>
+        <p>
+          <button class="quiz-btn" data-bind="click: clear">CLEAR</button>
+          <button class="quiz-btn" data-bind="click: submit">SUBMIT</button>
+        </p>
+      </div>
+
+      <!--    TEST RESULTS-->
+      <div id="summary" class="hidden summary-div">
+        <h3>Your Results</h3>
+        <h3 id="rank"></h3>
+        <h3 id="score"></h3>
+        <p>
+          <button data-bind="click: retest">RETEST</button>
+          <button data-bind="click: answers">ANSWERS</button>
+        </p>
+      </div>
+      <!--  ANSWERS SUMMARY-->
+      <div id="answers" class="hidden answers-div">
+        <h3 style="color: #f5f6ce; text-align: center">Your Answers</h3>
+        <div data-bind="foreach: questions">
+          <h3 data-bind="text: question"></h3>
+          <ul data-bind="foreach: answers" class="radios">
+            <li data-bind="text: 'a. ' + $data.a"></li>
+            <li data-bind="text: 'b. ' + $data.b"></li>
+            <li data-bind="text: 'c. ' + $data.c"></li>
+            <li data-bind="text: 'd. ' + $data.d"></li>
+          </ul>
+          <p>
+            <b>Correct Answer:</b> <span data-bind="text: correctAnswer"></span>
+          </p>
+          <p style="color: #f5f6ce">
+            <b>Your Answer:</b>
+            <span data-bind="text: userSelection"></span>
+          </p>
+        </div>
+        <p>
+          <button data-bind="click: back">BACK</button>
+          <button data-bind="click: retest">RETEST</button>
+        </p>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"
+    integrity="sha512-vs7+jbztHoMto5Yd/yinM4/y2DOkPLt0fATcN+j+G4ANY2z4faIzZIOMkpBmWdcxt+596FemCh9M18NUJTZwvw=="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+    crossorigin="anonymous"
+  ></script>
+  <script src="script.js"></script>
 </html>

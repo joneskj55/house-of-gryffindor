@@ -1,29 +1,42 @@
+/*============================================
+; Title: House Gryffindor JavaScript Trivia
+; Author: Mark Watson
+; Date: 11 February 2021
+; Modified by: Kevin Jones
+; Description: JavaScript quiz built using
+; Knockout.js (CSS file)
+;===========================================*/
+
 * {
-  font-family: 'Nunito', sans-serif;
-  color: #090909;
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
 }
 
 body {
-  background-color: #ECAD43;
+  background-color: #ecad43;
   padding: 1em;
 }
 
-.header, .sub-header {
-  font-family: 'Jim Nightshade', cursive;
-  color: #F5F6CE;
+.header,
+.sub-header {
+  font-family: "Jim Nightshade", cursive;
+  color: #f5f6ce;
+  letter-spacing: 5px;
   font-size: 4em;
 }
 
 .sub-header {
+  letter-spacing: 2px;
   font-size: 2em;
 }
 
 #knockout-app {
-  background-color: #721E1C;
+  background-color: #721e1c;
   text-align: center;
   padding: 2em 0;
   border-radius: 10px;
+  -webkit-box-shadow: 0 0 12px 2px #090909;
+  box-shadow: 0 0 12px 2px #090909;
 }
 
 #crest {
@@ -34,8 +47,14 @@ body {
 }
 
 #quiz {
-  background-color: #A8322E;
+  background-color: #e1423d;
   padding: 2em 0;
+}
+
+.radios {
+  margin: 0 auto;
+  width: 260px;
+  text-align: left;
 }
 
 h3 {
@@ -43,21 +62,70 @@ h3 {
 }
 
 button {
-  background-color: #ECAD43;
+  background-color: #ecad43;
   border: none;
   color: #090909;
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 12px 24px;
   margin: 5px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  -webkit-box-shadow: 0 0 3px 1px #a06100;
+  box-shadow: 0 0 3px 1px #a06100;
 }
 
 button:hover {
-  background-color: #D3942A;
+  background-color: #d3942a;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .hidden {
   display: none;
+}
+
+.summary-div {
+  color: #f5f6ce;
+}
+
+.answers-div {
+  background-color: #e1443d;
+  padding: 0.5em;
+}
+
+ul {
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  #knockout-app {
+    overflow: hidden;
+  }
+  #crest {
+    width: 320px;
+    padding-bottom: 0;
+  }
+  .header {
+    font-size: 2em;
+  }
+  #quiz,
+  label {
+    text-align: left;
+    padding: 0.5em;
+  }
+  p {
+    text-align: center;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  .answers-div {
+    text-align: left;
+  }
+  .radios {
+    width: 276px;
+  }
 }
